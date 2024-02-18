@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.artiofabula.externproject.data.answers.AnswerItem
@@ -21,7 +22,9 @@ class AnswersViewModel(private val repository: AnswersRepository) : ViewModel() 
         fetchingJob = CoroutineScope(Dispatchers.IO).launch {
             while (true) { // retries
                 val result = runCatching { repository.getAnswersForQuestion(questionId) }
+
                 if (result.isFailure) {
+                    delay(1000)
                     continue
                 }
 
