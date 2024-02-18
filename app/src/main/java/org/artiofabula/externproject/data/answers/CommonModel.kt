@@ -9,4 +9,4 @@ import java.io.Serializable
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class Owner(
     @JsonProperty("display_name") val displayName: String,
-): Serializable
+) : Serializable

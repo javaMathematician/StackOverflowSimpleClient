@@ -1,7 +1,6 @@
 package org.artiofabula.externproject.data.questions
 
 import org.artiofabula.externproject.data.StackOverflowApi
-import java.lang.IllegalStateException
 
 class QuestionsRepository(private val api: StackOverflowApi) {
     suspend fun getTopQuestions(): List<QuestionItem> {

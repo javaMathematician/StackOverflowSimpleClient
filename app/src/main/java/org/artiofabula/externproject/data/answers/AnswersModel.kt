@@ -7,7 +7,7 @@ import java.io.Serializable
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-data class GetAnswersResponse(@JsonProperty("items") val questionItems: List<AnswerItem>): Serializable
+data class GetAnswersResponse(@JsonProperty("items") val questionItems: List<AnswerItem>) : Serializable
 
 data class AnswerItem(
     @JsonProperty("body") val body: String,

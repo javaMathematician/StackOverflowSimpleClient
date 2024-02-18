@@ -18,4 +18,4 @@ data class QuestionItem(
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-data class GetQuestionsResponse(@JsonProperty("items") val questionItems: List<QuestionItem>): Serializable
+data class GetQuestionsResponse(@JsonProperty("items") val questionItems: List<QuestionItem>) : Serializable
